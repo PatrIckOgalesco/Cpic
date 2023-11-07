@@ -1,0 +1,112 @@
+
+.notification-popup {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  max-width: 50%; /* Adjust the maximum width for larger screens */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  overflow: auto; /* Add scrolling for the entire popup */
+}
+
+.notification-popup .text-container {
+  flex-grow: 1;
+  padding: 10px;
+  text-align: left;
+  font-weight: normal; /* Remove font weight from text */
+}
+
+.notification-popup p {
+  margin: 0; /* Remove default margin for <p> elements */
+/*  font-family: 'Fira Code', monospace;*/
+  font-weight: normal;
+  font-size: 12px;
+  text-align: left;
+}
+.notification-popup h3 {
+  text-align: left;
+}
+
+.notification-popup img {
+  height: auto;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.notification-popup #close {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  background-color: #75a99c;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears on top of other content */
+}
+
+/* Track (the area where the scrollbar is located) */
+::-webkit-scrollbar {
+  width: 12px; /* You can adjust the width */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar handle */
+  border-radius: 6px; /* Rounded corners for the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar handle on hover */
+}
+
+/* Track on hover (the area where the scrollbar is located on hover) */
+::-webkit-scrollbar-track:hover {
+  background: none; /* Color of the track on hover */
+}
+
+/* Track piece (the visible part of the track) */
+::-webkit-scrollbar-track-piece {
+  background: none; /* Color of the visible track */
+}
+
+/* Track piece on hover */
+::-webkit-scrollbar-track-piece:hover {
+  background: none; /* Color of the visible track on hover */
+}
+
+
+/* Add a media query for larger screens (e.g., laptops) */
+@media (min-width: 1024px) {
+  .notification-popup .text-container {
+    max-height: none; /* Remove the max-height for the text container on larger screens */
+  }
+  .notification-popup img {
+    max-height: 300px;
+  }.notification-popup{
+    max-height: 90%;
+  }
+}
+
+/* Add media query for mobile view */
+@media (max-width: 767px) {
+  .notification-popup {
+    max-height: 90%; /* Adjust the maximum height for mobile view */
+    max-width: 95%;
+  }
+}

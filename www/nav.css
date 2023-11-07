@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --body-color: #18191a;
+  --sidebar-color: #242526;
+/*  --primary-color: #3a3b3c;*/
+   --primary-color: #222327;
+  --text-color: #FFFFFF;
+}
+
+.top-nav {
+  background: var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 100;
+  opacity: 95%;
+}
+#nav-btn, #theme-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);#75a99c
+  cursor: pointer;
+  font-size: 24px;
+}
+#theme-btn {
+  background: none;
+  border: none;
+  color: #75a99c;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.menu-links {
+  list-style: none;
+  padding: 10px;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0; /* Push the menu links to the bottom */
+}
+
+.menu-links li {
+  margin-top: 20px;
+}
+
+.menu-links .nav-link a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.sidebar.open .menu-links .nav-link a {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+
+
+
+
+
+
+
+
+
+.container {
+  display: flex;
+  transition: margin-left 0.3s ease, width 0.3s ease; /* Add transitions for smooth adjustments */
+  margin-left: 0; /* Initial margin */
+}
+
+.container.container-open {
+  margin-left: 230px; /* Adjust the margin when the sidebar is open */
+  width: calc(100% - 230px); /* Adjust the width when the sidebar is open */
+}
+
+.sidebar {
+  position: fixed;
+  top: 49px;
+  left: -230px; /* Initially hide the sidebar off the screen */
+  width: 230px;
+  height: calc(100% - 49px);
+  padding: 30px 14px;
+  background: var(--sidebar-color);
+  z-index: 99;
+  transition: left 0.3s ease;
+  border-right: 1px solid var(--incoming-chat-border);
+}
+
+.sidebar.open {
+  left: 0; /* Slide the sidebar in when it's open */
+}
+
+.chat-container {
+  flex: 1; /* Allow the chat container to grow and shrink to fill the available space */
+  overflow-y: auto;
+  transition: width 0.3s ease; /* Add a transition for smooth width change */
+  width: 100%; /* Initially, it takes the full width */
+}
+
+.sidebar .container {
+  display: flex;
+  flex-direction: column; /* Change the flex-direction to column */
+  align-items: center; /* To center the items vertically */
+}
+.container.container-pushed {
+  margin-left: 230px; /* Adjust the margin when the sidebar is open on big screens */
+}
+
+.typing-container.typing-container-pushed {
+  width: calc(100% - 230px); /* Adjust the width of the typing-container when the sidebar is open on big screens */
+  margin-left: 230px; /* Push the typing-container to the right */
+}
+
+
+
+.container.container-open .chat-container {
+  width: calc(100% - 230px); /* Adjust chat-container width when the sidebar is open */
+  transition: width 0.3s ease
+}
+
+.container.container-open .typing-container {
+  width: calc(100% - 230px); /* Adjust the width of the typing-container when the sidebar is open */
+  margin-left: 230px; /* Use negative margin to move the right side to the left */
+  transition: width 0.3s ease
+}
+
+.container.container-open .typing-textarea {
+  width: 100%; /* The textarea should occupy the entire container width */
+}
+
+
+/* Media query for screens smaller than 800px (e.g., small screens) */
+@media screen and (max-width: 800px) {
+  .sidebar {
+    left: -230px;
+  }
+
+  .container.container-pushed {
+    margin-left: 0; /* Reset margin for small screens */
+  }
+
+  .typing-container.typing-container-pushed {
+    width: 100%; /* Reset width for small screens */
+    margin-left: 0; /* Reset margin for small screens */
+  }
+}
+
+/* Media query for screens larger than or equal to 800px (e.g., large screens) */
+@media screen and (min-width: 800px) {
+  .sidebar {
+    left: 0;
+  }
+
+  .container.container-pushed .disclaimer{
+    margin-left: 230px; /* Adjust margin for large screens */
+  }
+
+  .typing-container.typing-container-pushed {
+    width: calc(100% - 230px); /* Adjust width for large screens */
+    margin-left: 230px; /* Push the typing-container for large screens */
+  }
+}
