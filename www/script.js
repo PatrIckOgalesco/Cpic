@@ -99,7 +99,7 @@ const handleOutgoingChat = () => {
   }
 
   const speech = new SpeechSynthesisUtterance(sanitizeTextForSpeech(answer));
-  speech.rate = 1.0;
+  speech.rate = 1.1;
   speech.onend = () => {
     currentSpeech = null;
   };
