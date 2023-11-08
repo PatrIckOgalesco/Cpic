@@ -59,6 +59,32 @@
   z-index: 1000; /* Ensure it appears on top of other content */
 }
 
+button[type=button] {
+  margin-top: 10px;
+  appearance: none;
+  border: .2em solid #75a99c;
+  background: transparent;
+  padding: .85em 1.5em;
+  color: #E91E63;
+  border-radius: 2em;
+  transition: 1s;
+  width: 40%;
+  color: #FFFFFF;
+}
+
+input{
+  background: transparent;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-bottom: .2em solid #75a99c;
+  background: rgba(#E91E63, .2);
+  border-radius: .2em .2em 0 0;
+  padding: 20px;
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
 /* Track (the area where the scrollbar is located) */
 ::-webkit-scrollbar {
   width: 12px; /* You can adjust the width */

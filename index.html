@@ -6,13 +6,15 @@
   <link rel="stylesheet" href="www/style.css">
   <link rel="stylesheet" href="www/nav.css">
   <link rel="stylesheet" href="www/about.css">
+  <link rel="stylesheet" href="www/admin.css">
   <link rel="stylesheet" href="www/predictive-text.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <script src="www/script.js" defer></script>
   <script src="www/about.js" defer></script>
-  <script src="www/server.js" defer></script>
+  <script src="www/admin.js" defer></script>
   <script src="www/theme.js" defer></script>
   <script src="www/predictive-text.js" defer></script>
   <script src="www/nav.js" defer></script>
@@ -51,9 +53,14 @@
               <i></i style="color: #75a99c;"> Contact
             </a>
           </li>
+          <li class="nav-link">
+            <a href="#" id="feedback-button">
+              <p> Feedback</p> 
+            </a>
+          </li>
            <li class="nav-link">
-            <a href="#">
-              <p style="color: #75a99c;"> Feedback</p> 
+            <a href="#" id="admin-button">
+              <p style="color: #75a99c;"> Admin</p> 
             </a>
           </li><br><br>
           <p style="color: #75a99c; font-size: 9px;">Note: This system is create for Thesis and Web System writting only</p>
@@ -85,18 +92,6 @@
   
 </div>
 </div>
-<script>
-  $(document).ready(function(){
-    $('.carousel').carousel({
-      padding: 200
-  });
-  autoplay();
-  function autoplay() {
-    $('.carousel').carousel('next');
-    setTimeout(autoplay, 4500);
-  }
-  });
-</script>
 </body>
 </html>
 

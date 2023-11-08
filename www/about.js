@@ -1,17 +1,24 @@
-// Variable to track whether the notification is already displayed
-let isNotificationVisible = false;
+// Variable to track whether the "About" notification is already displayed
+let isAboutNotificationVisible = false;
+
+// Variable to track whether the "About Us" notification is already displayed
+let isAboutUsNotificationVisible = false;
+
+// Variable to track whether the "Contact" notification is already displayed
+let isContactNotificationVisible = false;
+
+// Variable to track whether the "Feedback" notification is already displayed
+let isFeedbackNotificationVisible = false;
 
 // Create a function to display the "About" notification
 function showAboutNotification() {
-  // Check if a notification is already visible
-  if (isNotificationVisible) {
-    return; // Do nothing if a notification is already displayed
+  if (isAboutNotificationVisible) {
+    return; 
   }
 
-  // Create a notification element for "About"
-  const notification = document.createElement("div");
-  notification.className = "notification-popup";
-  notification.innerHTML = `
+  const aboutNotification = document.createElement("div");
+  aboutNotification.className = "notification-popup";
+  aboutNotification.innerHTML = `
     <h3>About</h3>
     <img src="www/images/Digital.gif" alt="Snippet"><br>
     <p>SmartNavigator is a cutting-edge chatbot designed to revolutionize the way students and faculty at Christian Polytechnic Institute of Catanduanes Inc. (CPIC) access and interact with campus-related information. It is powered by state-of-the-art natural language processing and voice interaction capabilities, enabling it to provide precise and swift responses to user queries.</p><br><br>
@@ -22,25 +29,21 @@ function showAboutNotification() {
     <span id="close" class="material-symbols-rounded">close</span>
   `;
 
-  // Add a click event listener to the close button
-  notification.querySelector("#close").addEventListener("click", () => {
-    document.body.removeChild(notification);
-    isNotificationVisible = false; // Mark the notification as closed
+  aboutNotification.querySelector("#close").addEventListener("click", () => {
+    document.body.removeChild(aboutNotification);
+    isAboutNotificationVisible = false; 
   });
 
-  // Append the "About" notification to the body
-  document.body.appendChild(notification);
-  isNotificationVisible = true; // Mark the notification as displayed
+  document.body.appendChild(aboutNotification);
+  isAboutNotificationVisible = true; 
 }
 
 // Create a function to display the "About Us" notification
 function showAboutUsNotification() {
-  // Check if a notification is already visible
-  if (isNotificationVisible) {
-    return; // Do nothing if a notification is already displayed
+  if (isAboutUsNotificationVisible) {
+    return; 
   }
 
-  // Create a notification element for "About Us"
   const aboutUsNotification = document.createElement("div");
   aboutUsNotification.className = "notification-popup";
   aboutUsNotification.innerHTML = `
@@ -52,7 +55,7 @@ function showAboutUsNotification() {
     <h3>Meet Our Team</h3><br>
     <ul style= "text-align: left; font-size: 12px;">
         <li>
-            <strong>Name:</strong> Jon Ken Ambrosiobr<br>
+            <strong>Name:</strong> Jon Ken Ambrosio<br>
             <strong>Age:</strong> 22<br>
             <strong>Contact:</strong> john@example.com<br>
             <strong>Role:</strong> Project Manager, System Developer, Database Manager
@@ -85,25 +88,21 @@ function showAboutUsNotification() {
     <span id="close" class="material-symbols-rounded">close</span>
   `;
 
-  // Add a click event listener to the close button
   aboutUsNotification.querySelector("#close").addEventListener("click", () => {
     document.body.removeChild(aboutUsNotification);
-    isNotificationVisible = false; // Mark the notification as closed
+    isAboutUsNotificationVisible = false; 
   });
 
-  // Append the "About Us" notification to the body
   document.body.appendChild(aboutUsNotification);
-  isNotificationVisible = true; // Mark the notification as displayed
+  isAboutUsNotificationVisible = true; 
 }
 
 // Create a function to display the "Contact" notification
 function showContactNotification() {
-  // Check if a notification is already visible
-  if (isNotificationVisible) {
-    return; // Do nothing if a notification is already displayed
+  if (isContactNotificationVisible) {
+    return; 
   }
 
-  // Create a notification element for "Contact"
   const contactNotification = document.createElement("div");
   contactNotification.className = "notification-popup";
   contactNotification.innerHTML = `
@@ -115,21 +114,45 @@ function showContactNotification() {
     <span id="close" class="material-symbols-rounded">close</span>
   `;
 
-  // Add a click event listener to the close button
   contactNotification.querySelector("#close").addEventListener("click", () => {
     document.body.removeChild(contactNotification);
-    isNotificationVisible = false; // Mark the notification as closed
+    isContactNotificationVisible = false; 
   });
 
-  // Append the "Contact" notification to the body
   document.body.appendChild(contactNotification);
-  isNotificationVisible = true; // Mark the notification as displayed
+  isContactNotificationVisible = true; 
 }
 
-// Get references to the "About," "About Us," and "Contact" buttons
+// Create a function to display the "Feedback" notification
+function showFeedbackNotification() {
+  if (isFeedbackNotificationVisible) {
+    return; 
+  }
+
+  const feedbackNotification = document.createElement("div");
+  feedbackNotification.className = "notification-popup";
+  feedbackNotification.innerHTML = `
+    <h3>Feedback</h3>
+    <img src="www/images/Explainer.gif" alt="Snippet"><br>
+    <input class="w3-input" type="text">
+    <button class="button" type="button">Send</button><br>
+    <span id="close" class="material-symbols-rounded">close</span>
+  `;
+
+  feedbackNotification.querySelector("#close").addEventListener("click", () => {
+    document.body.removeChild(feedbackNotification);
+    isFeedbackNotificationVisible = false; 
+  });
+
+  document.body.appendChild(feedbackNotification);
+  isFeedbackNotificationVisible = true; 
+}
+
+// Get references to the "About," "About Us," "Contact," and "Feedback" buttons
 const aboutLink = document.getElementById("about-button");
 const aboutUsLink = document.getElementById("aboutUs-button");
 const contactLink = document.getElementById("contact-button");
+const feedbackLink = document.getElementById("feedback-button");
 
 // Add click event listeners for all buttons
 aboutLink.addEventListener("click", function (event) {
@@ -145,4 +168,9 @@ aboutUsLink.addEventListener("click", function (event) {
 contactLink.addEventListener("click", function (event) {
   event.preventDefault();
   showContactNotification();
+});
+
+feedbackLink.addEventListener("click", function (event) {
+  event.preventDefault();
+  showFeedbackNotification();
 });

@@ -3,6 +3,7 @@ let predictiveTextOptions = [
   "Where is Mr. Jomar's room?",
   "Where is Mrs. Sheila's room?",
   "history",
+  "who is gollum",
 ];
 predictiveTextOptions.sort();
 
