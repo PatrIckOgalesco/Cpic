@@ -419,6 +419,10 @@ span.material-symbols-rounded {
   span.material-symbols-rounded {
     font-size: 1.25rem;
   }
+  img.resize-image {
+  width: 100%;
+  height: auto;
+}
 }
 
 /* For screens with a width between 600px and 1200px (medium screens) */
@@ -514,3 +518,5 @@ span.material-symbols-rounded {
     font-size: 1.5rem;
   }
 }
+
+

@@ -1,3 +1,4 @@
+
 const chatInput = document.querySelector("#chat-input");
 const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
@@ -167,3 +168,4 @@ voiceButton.addEventListener("click", () => {
     speechSynthesis.speak(speech);
   }
 });
+

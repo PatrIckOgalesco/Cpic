@@ -193,24 +193,30 @@ input[type=text] {
   color: #343541;
 }
 
-/* Style for responsive table */
+
+
 .table-container {
+  margin-left: 30px;
+  margin-right: 30px;
   overflow-x: auto;
 }
 
 table {
-  padding: 10px;
   width: 100%;
   border-collapse: collapse;
-}
-
-table, th, td {
-  border: 1px solid #ccc;
+  margin: 10px 0;
+  font-size: 12px;
 }
 
 th, td {
+  border: 1px solid #ccc;
   padding: 10px;
   text-align: left;
+}
+
+th {
+  background: #222327;
+  color: #FFFFFF;
 }
 
 /* Style for inputs and buttons */
@@ -223,11 +229,19 @@ th, td {
   width: 100%;
 }
 
-/* Adjust the appearance of buttons for responsiveness */
-button {
+.table-container button {
   font-size: 12px;
   padding: 5px 10px;
+  background: #75a99c;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
 }
+
+.table-container button:hover {
+  background: #58a080;
+}
+
 
 /* Media query for small screens (e.g., mobile devices) */
 @media (max-width: 768px) {
