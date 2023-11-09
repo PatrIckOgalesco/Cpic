@@ -1,24 +1,42 @@
-// Variable to track whether the "About" notification is already displayed
-let isAboutNotificationVisible = false;
+let openNotification = null;
 
-// Variable to track whether the "About Us" notification is already displayed
-let isAboutUsNotificationVisible = false;
-
-// Variable to track whether the "Contact" notification is already displayed
-let isContactNotificationVisible = false;
-
-// Variable to track whether the "Feedback" notification is already displayed
-let isFeedbackNotificationVisible = false;
-
-// Create a function to display the "About" notification
-function showAboutNotification() {
-  if (isAboutNotificationVisible) {
-    return; 
+function closeNotification() {
+  if (openNotification) {
+    document.body.removeChild(openNotification);
+    openNotification = null;
   }
+}
 
-  const aboutNotification = document.createElement("div");
-  aboutNotification.className = "notification-popup";
-  aboutNotification.innerHTML = `
+function showNotification(notificationHTML) {
+  closeNotification();
+
+  const notification = document.createElement("div");
+  notification.className = "notification-popup";
+  notification.innerHTML = notificationHTML;
+
+  const closeButton = document.createElement("span");
+  closeButton.id = "close";
+  closeButton.className = "material-symbols-rounded";
+  closeButton.textContent = "close";
+  closeButton.addEventListener("click", () => {
+    closeNotification();
+  });
+
+  notification.appendChild(closeButton);
+  document.body.appendChild(notification);
+
+  openNotification = notification;
+}
+
+// Get references to the buttons
+const aboutButton = document.getElementById("about-button");
+const aboutUsButton = document.getElementById("aboutUs-button");
+const contactButton = document.getElementById("contact-button");
+const feedbackButton = document.getElementById("feedback-button");
+
+aboutButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  const aboutHTML = `
     <h3>About</h3>
     <img src="www/images/Digital.gif" alt="Snippet"><br>
     <p>SmartNavigator is a cutting-edge chatbot designed to revolutionize the way students and faculty at Christian Polytechnic Institute of Catanduanes Inc. (CPIC) access and interact with campus-related information. It is powered by state-of-the-art natural language processing and voice interaction capabilities, enabling it to provide precise and swift responses to user queries.</p><br><br>
@@ -28,25 +46,12 @@ function showAboutNotification() {
     <p>The SmartNavigator is introduced with a multifaceted purpose aimed at improving communication, providing academic support, reducing administrative tasks, and contributing to data-driven educational enhancements within the CPIC school system. Through this research, we aim to gain a comprehensive understanding of the manifold benefits and potential challenges associated with this innovative tool, shedding light on its role in revolutionizing education in the digital age.</p>
     <span id="close" class="material-symbols-rounded">close</span>
   `;
+  showNotification(aboutHTML);
+});
 
-  aboutNotification.querySelector("#close").addEventListener("click", () => {
-    document.body.removeChild(aboutNotification);
-    isAboutNotificationVisible = false; 
-  });
-
-  document.body.appendChild(aboutNotification);
-  isAboutNotificationVisible = true; 
-}
-
-// Create a function to display the "About Us" notification
-function showAboutUsNotification() {
-  if (isAboutUsNotificationVisible) {
-    return; 
-  }
-
-  const aboutUsNotification = document.createElement("div");
-  aboutUsNotification.className = "notification-popup";
-  aboutUsNotification.innerHTML = `
+aboutUsButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  const aboutUsHTML = `
     <h3>About Us</h3>
     <img src="www/images/VR.gif" alt="Snippet"><br>
     <p>
@@ -87,25 +92,12 @@ function showAboutUsNotification() {
     </ul>
     <span id="close" class="material-symbols-rounded">close</span>
   `;
+  showNotification(aboutUsHTML);
+});
 
-  aboutUsNotification.querySelector("#close").addEventListener("click", () => {
-    document.body.removeChild(aboutUsNotification);
-    isAboutUsNotificationVisible = false; 
-  });
-
-  document.body.appendChild(aboutUsNotification);
-  isAboutUsNotificationVisible = true; 
-}
-
-// Create a function to display the "Contact" notification
-function showContactNotification() {
-  if (isContactNotificationVisible) {
-    return; 
-  }
-
-  const contactNotification = document.createElement("div");
-  contactNotification.className = "notification-popup";
-  contactNotification.innerHTML = `
+contactButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  const contactHTML = `
     <h3>Contact</h3>
     <img src="www/images/Media.gif" alt="Snippet"><br>
     <p style="font-size: 13px">Address: Francia, Virac</p><br>
@@ -113,25 +105,12 @@ function showContactNotification() {
     <p style="font-size: 13px">Email: cpic@gmail.com</p><br>
     <span id="close" class="material-symbols-rounded">close</span>
   `;
+  showNotification(contactHTML);
+});
 
-  contactNotification.querySelector("#close").addEventListener("click", () => {
-    document.body.removeChild(contactNotification);
-    isContactNotificationVisible = false; 
-  });
-
-  document.body.appendChild(contactNotification);
-  isContactNotificationVisible = true; 
-}
-
-// Create a function to display the "Feedback" notification
-function showFeedbackNotification() {
-  if (isFeedbackNotificationVisible) {
-    return; 
-  }
-
-  const feedbackNotification = document.createElement("div");
-  feedbackNotification.className = "notification-popup";
-  feedbackNotification.innerHTML = `
+feedbackButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  const feedbackHTML = `
     <h3>Feedback</h3>
     <img src="www/images/Explainer.gif" alt="Snippet"><br>
     <p>"We value your feedback and would love to hear your thoughts. Your feedback helps us improve and provide you with a better experience."</p>
@@ -139,39 +118,5 @@ function showFeedbackNotification() {
     <button class="button" type="button">Send</button><br>
     <span id="close" class="material-symbols-rounded">close</span>
   `;
-
-  feedbackNotification.querySelector("#close").addEventListener("click", () => {
-    document.body.removeChild(feedbackNotification);
-    isFeedbackNotificationVisible = false; 
-  });
-
-  document.body.appendChild(feedbackNotification);
-  isFeedbackNotificationVisible = true; 
-}
-
-// Get references to the "About," "About Us," "Contact," and "Feedback" buttons
-const aboutLink = document.getElementById("about-button");
-const aboutUsLink = document.getElementById("aboutUs-button");
-const contactLink = document.getElementById("contact-button");
-const feedbackLink = document.getElementById("feedback-button");
-
-// Add click event listeners for all buttons
-aboutLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  showAboutNotification();
-});
-
-aboutUsLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  showAboutUsNotification();
-});
-
-contactLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  showContactNotification();
-});
-
-feedbackLink.addEventListener("click", function (event) {
-  event.preventDefault();
-  showFeedbackNotification();
+  showNotification(feedbackHTML);
 });
