@@ -13,7 +13,7 @@
   background-color: #333;
   color: #fff;
   padding: 20px;
-  border-radius: 25px;
+  border-radius: 3px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   z-index: 9999;
   overflow: auto; /* Add scrolling for the entire popup */
@@ -32,14 +32,18 @@
   font-size: 12px;
   text-align: left;
 }
+.adminboard h1 {
+  margin: 0;
+  text-align: left;
+}
 .adminboard h3 {
   text-align: left;
 }
 
 .adminboard img {
-  height: auto;
+  height: 100%;
   width: 100%;
-  border-radius: 15px;
+  border-radius: 1px;
 }
 
 

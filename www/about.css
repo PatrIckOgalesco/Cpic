@@ -87,7 +87,7 @@ input{
 
 /* Track (the area where the scrollbar is located) */
 ::-webkit-scrollbar {
-  width: 12px; /* You can adjust the width */
+  width: 8px; /* You can adjust the width */
 }
 
 /* Handle (the draggable part of the scrollbar) */
@@ -125,6 +125,7 @@ input{
   .notification-popup img {
     max-height: 300px;
   }.notification-popup{
+    max-width: 40%;
     max-height: 90%;
   }
 }

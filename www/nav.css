@@ -30,7 +30,8 @@
 #nav-btn, #theme-btn {
   background: none;
   border: none;
-  color: var(--text-color);#75a99c
+  color: #FFFFFF;
+/*  color: var(--text-color);#75a99c*/
   cursor: pointer;
   font-size: 24px;
 }

@@ -18,41 +18,70 @@ function showAdminNotification() {
       </div>
     </nav><br><br>
     <div class="table-container">
-        <p>"Hello there, Admin! It's a great day to see you again. Welcome to your admin dashboard. How can we assist you today?"</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Upload Image</th>
-            <th>Question</th>
-            <th>Answer</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="file"></td>
-            <td><input type="text" class="question-input"></td>
-            <td><input type="text" class="answer-input"></td>
-            <td>
-              <button class="edit-button">Edit</button>
-              <button class="delete-button">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="file"></td>
-            <td><input type="text" class="question-input"></td>
-            <td><input type="text" class="answer-input"></td>
-            <td>
-              <button class="edit-button">Edit</button>
-              <button class="delete-button">Delete</button>
-            </td>
-          </tr>
-          <!-- Add more rows here if needed -->
-        </tbody>
-      </table>
-      
-  <button class="add-row-button">Add New Row</button>
-    </div>
+  <h1>Hello there, Admin!</h1>
+  <p>It's a great day to see you again. Welcome to your admin dashboard. How can we assist you today?</p>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Upload Image</th>
+        <th>Question</th>
+        <th>Answer</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td><input type="file" id="image1"></td>
+        <td><input type="text" class="question-input" id="question1"></td>
+        <td><input type="text" class="answer-input" id="answer1"></td>
+        <td>
+          <button class="edit-button">Edit</button>
+          <button class="delete-button">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="file" id="image2"></td>
+        <td><input type="text" class="question-input" id="question2"></td>
+        <td><input type="text" class="answer-input" id="answer2"></td>
+        <td>
+          <button class="edit-button">Edit</button>
+          <button class="delete-button">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="add-row-button" onclick="addNewRow()">Add New Row</button>
+</div>
+
+<script>
+  function addNewRow() {
+    const image = document.getElementById('image1').value; // Get image input value
+    const question = document.getElementById('question1').value; // Get question input value
+    const answer = document.getElementById('answer1').value; // Get answer input value
+
+    // Make an AJAX request using the fetch API
+    fetch('add_row.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `image=${encodeURIComponent(image)}&question=${encodeURIComponent(question)}&answer=${encodeURIComponent(answer)}`,
+    })
+      .then(response => response.json()) // Assuming the server returns JSON
+      .then(data => {
+        // Handle the response data (e.g., update the table)
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error adding new row:', error);
+      });
+  }
+</script>
+
 
     <div class="table-container">
         <p>"Users feedback helps us improve and provide us with a better experience."</p>

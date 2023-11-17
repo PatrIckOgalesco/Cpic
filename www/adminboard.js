@@ -70,3 +70,30 @@ addRowButton.addEventListener('click', () => {
 
 // Initial setup
 updateTable();
+
+
+
+
+
+function addNewRow() {
+    const image = document.getElementById('image1').value; // Get image input value
+    const question = document.getElementById('question1').value; // Get question input value
+    const answer = document.getElementById('answer1').value; // Get answer input value
+
+    // Make an AJAX request using the fetch API
+    fetch('add_row.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `image=${encodeURIComponent(image)}&question=${encodeURIComponent(question)}&answer=${encodeURIComponent(answer)}`,
+    })
+      .then(response => response.json()) // Assuming the server returns JSON
+      .then(data => {
+        // Handle the response data (e.g., update the table)
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error adding new row:', error);
+      });
+  }

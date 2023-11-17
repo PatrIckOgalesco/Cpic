@@ -15,15 +15,12 @@ const sanitizeTextForSpeech = (text) => {
 };
 
 const loadDataFromLocalstorage = () => {
-  const defaultText = `<div class="default-text"><br>
-
+  const defaultText = `<div class="default-text"><br><br>
     <h2 style="font-size: 1.7rem;text-align: left;">Hello there, welcome!</h2>
-    <p>Your Personal CPIC Chatbot Campus Navigator!</p><br><br><br>
-    <img src="www/images/chatbot3.jpg" alt="user-img" style="border-radius: 50px;">
-    <h1> SmartNavigator </h1>
-    <p style = "font-size:10px;">"A chatbot designed to revolutionize the way students and faculty at Christian Polytechnic Institute of Catanduanes Inc."
-</p>
-
+    <p>Hello there, welcome! Your Personal CPIC Chatbot Campus Navigator!</p>
+    <img src="www/images/b-bot.png" alt="user-img" style="width: auto; height: 60%;">
+    <h2> SmartNavigator </h2>
+    <p style = "font-size:10px;">"A chatbot designed to revolutionize the way students and faculty at Christian Polytechnic Institute of Catanduanes Inc."</p>
     <p style="color: #75a99c; font-size: 12px;">Created by: 4th Yr-BSCS (Group 3)</p>
   </div>`;
 
@@ -38,61 +35,8 @@ const createChatElement = (content, className) => {
   return chatDiv;
 };
 
-const handleOutgoingChat = () => {
-  userText = chatInput.value.trim();
-  if (!userText) return;
-
-  chatInput.value = "";
-
-  const suggestion = document.getElementById("suggestion");
-  suggestion.textContent = "";
-
-  const html = `<div class="chat-content">
-    <div class="chat-details">
-      <img src="www/images/user6.jpg" alt="user-img">
-      <p>${userText}</p>
-    </div>
-  </div>`;
-
-  const outgoingChatDiv = createChatElement(html, "outgoing");
-  chatContainer.querySelector(".default-text")?.remove();
-  chatContainer.appendChild(outgoingChatDiv);
-  chatContainer.scrollTo(0, chatContainer.scrollHeight);
-
-  const question = userText.toLowerCase();
-  let answer = '';
-
-  switch (question) {
-    case "hi":
-    case "hello":
-      answer = "Hello there! How can I assist you today? Please enter your questions in the prompts, and I'll be happy to provide you with the information you need.";
-      break;
-    case "who is aristotle":
-      answer = '<img src="www/images/aristotle.jpg" style="height: 50%; width: 100%; align-items: center;"> Aristotle was a Greek philosopher and scientist, who lived from 384 to 322 BCE. He was a student of Plato and the founder of the Lyceum, a school of philosophy in Athens. He wrote on many subjects, including physics, biology, ethics, politics, and logic, and is considered one of the greatest intellectual figures of Western history. He was known as "the man who knew everything" and "The Philosopher".';
-      break;
-    case "who is gollum":
-      answer = '<img src="www/images/gollum.gif" style="height: 50%; width: 100%; align-items: center;"> Smeagol was once a BSCS student at CPIC, but he was corrupted by THESIS and WEB SYSTEM and later named Gollum after his habit of making "a horrible swallowing noise in his throat". As Smeagol began to change physically because of his altered lifestyle, he frequently made a noise clearing his throat. This, by onomatopoeia, became "Gollum". Then others who saw him, not knowing his name or that he was a Hobbit began to call him Gollum.';
-      break;
-    case "where is cpic":
-      answer = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d825.6277244016944!2d124.23732506459146!3d13.585938586788869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a016d415315ef9%3A0x70e8088067123e64!2sCPIC%20College!5e1!3m2!1sen!2sph!4v1699417169526!5m2!1sen!2sph" width="100%" height="300px" style="border:0; align-items: center;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  Christian Polytechnic Institute of Catanduanes  Inc.Sta. Elena, Virac, Catanduanes  Phone #: (052) 811-0192';
-      break;
-
-    default:
-      answer = "I'm sorry, but I couldn't find an answer to your question. Please make sure your question is properly punctuated and try again. If the question is not recognized or you have further inquiries, feel free to contact or email the Developer.";
-      break;
-  }
-
-  const answerHtml = `<div class="chat-content">
-    <div class="chat-details">
-      <img src="www/images/chatbot3.jpg" alt="chatbot-img">
-      <p>${answer}</p>
-    </div>
-  </div>`;
-
-  const incomingChatDiv = createChatElement(answerHtml, "incoming");
-  chatContainer.appendChild(incomingChatDiv);
-  chatContainer.scrollTo(0, chatContainer.scrollHeight);
-
+const speakAnswer = (answer) => {
+  // Immediately cancel the current speech if there is any
   if (currentSpeech) {
     currentSpeech.onend = null;
     speechSynthesis.cancel();
@@ -110,7 +54,88 @@ const handleOutgoingChat = () => {
   speechSynthesis.speak(speech);
 };
 
-deleteButton.addEventListener("click", () => {
+const handleOutgoingChat = () => {
+  userText = chatInput.value.trim();
+  if (!userText) return;
+
+  chatInput.value = "";
+
+  const suggestion = document.getElementById("suggestion");
+  suggestion.textContent = "";
+
+  const html = `<div class="chat-content">
+    <div class="chat-details">
+      <img src="www/images/user7.jpg" alt="user-img">
+      <p>${userText}</p>
+    </div>
+  </div>`;
+
+  const outgoingChatDiv = createChatElement(html, "outgoing");
+  chatContainer.querySelector(".default-text")?.remove();
+  chatContainer.appendChild(outgoingChatDiv);
+  chatContainer.scrollTo(0, chatContainer.scrollHeight);
+
+  const question = userText.toLowerCase();
+  let answer = '';
+
+  switch (question) {
+    case "where is cpic":
+      answer = `<p>Christian Polytechnic Institute of Catanduanes (CPIC) is located in Sta. Elena, Virac, Catanduanes.</p>
+              <p>Here's a map for your reference:</p>
+              <iframe width="100%" height="300" style="border:0;"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d825.6277244016944!2d124.23732506459146!3d13.585938586788869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a016d415315ef9%3A0x70e8088067123e64!2sCPIC%20College!5e1!3m2!1sen!2sph!4v1699417169526!5m2!1sen!2sph"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+      break;
+
+    default:
+      // Send the user input to the server (PHP) for database query
+      fetch('www/api.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `userText=${encodeURIComponent(userText)}`,
+      })
+        .then(response => response.text())
+        .then(databaseAnswer => {
+          answer = databaseAnswer;
+          const answerHtml = `<div class="chat-content">
+            <div class="chat-details">
+              <img src="www/images/chatbot3.jpg" alt="chatbot-img">
+              <p>${answer}</p>
+            </div>
+          </div>`;
+
+          const incomingChatDiv = createChatElement(answerHtml, "incoming");
+          chatContainer.appendChild(incomingChatDiv);
+          chatContainer.scrollTo(0, chatContainer.scrollHeight);
+
+          // Speak the answer using text-to-speech
+          speakAnswer(answer);
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+      return;
+  }
+
+  // If the switch case handles the answer, display it in the chat
+  const answerHtml = `<div class="chat-content">
+    <div class="chat-details">
+      <img src="www/images/chatbot3.jpg" alt="chatbot-img">
+      <div>${answer}</div>
+    </div>
+  </div>`;
+
+  const incomingChatDiv = createChatElement(answerHtml, "incoming");
+  chatContainer.appendChild(incomingChatDiv);
+  chatContainer.scrollTo(0, chatContainer.scrollHeight);
+
+  // Speak the answer using text-to-speech
+  speakAnswer(answer);
+};
+
+const deleteChats = () => {
   if (confirm("Are you sure you want to delete all the chats?")) {
     if (currentSpeech) {
       currentSpeech.onend = null;
@@ -121,7 +146,7 @@ deleteButton.addEventListener("click", () => {
     localStorage.removeItem("all-chats");
     loadDataFromLocalstorage();
   }
-});
+};
 
 const initialInputHeight = chatInput.scrollHeight;
 
@@ -139,13 +164,13 @@ chatInput.addEventListener("keydown", (e) => {
 
 loadDataFromLocalstorage();
 sendButton.addEventListener("click", handleOutgoingChat);
+deleteButton.addEventListener("click", deleteChats);
 
 voiceButton.addEventListener("click", () => {
   const lastIncomingChat = chatContainer.querySelector(".chat.incoming:last-child p");
   if (lastIncomingChat) {
     const textToSpeak = lastIncomingChat.textContent;
-    const speech = new SpeechSynthesisUtterance(textToSpeak);
-    speechSynthesis.speak(speech);
+    speakAnswer(textToSpeak);
   }
 });
 
@@ -160,12 +185,11 @@ chatInput.addEventListener("input", () => {
   suggestion.style.left = `${suggestionLeft}px`;
 });
 
-voiceButton.addEventListener("click", () => {
-  const lastIncomingChat = chatContainer.querySelector(".chat.incoming:last-child p");
-  if (lastIncomingChat) {
-    const textToSpeak = lastIncomingChat.textContent;
-    const speech = new SpeechSynthesisUtterance(textToSpeak);
-    speechSynthesis.speak(speech);
+// Add an event listener for page unload to stop speech
+window.addEventListener('beforeunload', () => {
+  if (currentSpeech) {
+    currentSpeech.onend = null;
+    speechSynthesis.cancel();
+    currentSpeech = null;
   }
 });
-
