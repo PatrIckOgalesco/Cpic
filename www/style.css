@@ -1,14 +1,12 @@
 /* Import Google font - Poppins */
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap');
-
-@import url('"https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:ital,wght@1,300&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 :root {
@@ -38,8 +36,8 @@ default {
   --placeholder-color: #6c6c6c;
   --outgoing-chat-bg: #343541;
   --incoming-chat-bg: #40414f;
- /* --outgoing-chat-border: #FFFFFF;
-  --incoming-chat-border: #D9D9E3;*/
+  --outgoing-chat-border:  #343541;
+  --incoming-chat-border:  #343541;
 }
 .light {
   --text-color: #343541;
@@ -201,30 +199,9 @@ span.material-symbols-rounded {
   visibility: visible;
 }
 
-/*.chat .chat-details {
-  display: flex;
-  align-items: center;
-}
-
-.chat .chat-details img {
-  width: 35px;
-  height: 35px;
-  align-self: flex-start;
-  object-fit: cover;
-  border-radius: 2px;
-}
-
-.chat .chat-details p {
-  white-space: pre-wrap;
-  font-size: 1.05rem;
-  padding: 0 50px 0 25px;
-  color: var(--text-color);
-  word-break: break-word;
-}
-
 .chat .chat-details p.error {
   color: #e55865;
-}*/
+}
 .chat .typing-animation {
   padding-left: 25px;
   display: inline-flex;
@@ -258,8 +235,8 @@ span.material-symbols-rounded {
 
 .chat-details p {
     white-space: pre-wrap;
-    font-size: 1.05rem;
-    
+    font-size: 12px;
+    padding: 0 50px 0 25px;
     color: var(--text-color);
     word-break: break-word;
 }
@@ -373,13 +350,19 @@ span.material-symbols-rounded {
   margin-left: 50px;
 }
 
-.nav-label {
+.nav-label{
   font-size: 13px; /* Adjust the font size as needed */
   color: #FFFFFF; /* Adjust the text color as needed */
   margin-left: 10px; /* Add some margin between the "menu" and "SmartNavigator" */
   display: flex;
   align-items: center;
 }
+
+.logo-img{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 
 .version {
   margin-left: 10px;

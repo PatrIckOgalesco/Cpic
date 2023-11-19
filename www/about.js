@@ -114,8 +114,8 @@ feedbackButton.addEventListener("click", function (event) {
     <h3>Feedback</h3>
     <img src="www/images/Explainer.gif" alt="Snippet"><br>
     <p>"We value your feedback and would love to hear your thoughts. Your feedback helps us improve and provide you with a better experience."</p>
-    <input class="w3-input" type="text">
-    <button class="button" type="button">Send</button><br>
+    <input id="userInput" class="w3-input" type="text">
+    <button id="sendButton" class="button" type="button">Send</button><br>
     <span id="close" class="material-symbols-rounded">close</span>
   `;
   showNotification(feedbackHTML);

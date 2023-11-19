@@ -12,7 +12,8 @@
 /* Position the suggestion above the textarea/prompts */
 .suggestion-container {
   position: absolute;
-  top: -30px; /* Adjust the top value to position it above the textarea/prompts */
+  margin-bottom: ;
+  top: -530px; /* Adjust the top value to position it above the textarea/prompts */
   left: 0;
   right: 0;
   display: flex;

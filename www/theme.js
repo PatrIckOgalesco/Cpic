@@ -22,7 +22,7 @@ function setThemeFromLocalStorage() {
 
   // Check if the current theme is "light-mode" and set the background accordingly
   if (currentTheme === "light-mode") {
-    document.body.style.background = "url('www/images/snippet.gif')";
+    document.body.style.background = "url('www/images/waterfall.gif')";
   } else {
     document.body.style.background = "var(--outgoing-chat-bg)";
   }
@@ -42,7 +42,7 @@ function updateTheme() {
 
   // Check if the current theme is "light-mode" and set the background accordingly
   if (newTheme === "light-mode") {
-    document.body.style.background = "url('www/images/snippet.gif')";
+    document.body.style.background = "url('www/images/waterfall.gif')";
   } else {
     document.body.style.background = "var(--outgoing-chat-bg)";
   }
