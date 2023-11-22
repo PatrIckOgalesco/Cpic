@@ -1,5 +1,5 @@
 #suggestion {
-  background: rgba(255, 255, 255, 0.3); /* Light background color with lower opacity */
+  background: rgba(255, 255, 255, 0.1); /* Light background color with lower opacity */
   text-align: center; /* Center-align the text */
   padding: 5px 10px; /* Adjust padding as needed */
   border-radius: 5px; /* Add rounded corners */
@@ -8,25 +8,23 @@
   color: var(--text-color); /* Use the same font color as the input prompts */
 }
 
-
 /* Position the suggestion above the textarea/prompts */
 .suggestion-container {
   position: absolute;
-  margin-bottom: ;
-  top: -530px; /* Adjust the top value to position it above the textarea/prompts */
+  bottom: 100px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center; /* Center horizontally */
-  opacity: 70%;
 }
 
 /* Mobile view styles for the suggestion span */
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
   .suggestion-container {
     position: absolute;
-    top: -30px; /* Adjust the top value to position it above the textarea/prompts */
+    top: -300px;
     left: 0;
     right: 0;
   }
 }
+*/

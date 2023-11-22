@@ -151,8 +151,8 @@ body {
 }
 
 .default-text p {
-  font-family: 'Fira Code', monospace;
-  margin-top: 10px;
+/*  font-family: 'Fira Code', monospace;*/
+  margin-top: 9px;
   font-size: .96rem;
 }
 
@@ -395,6 +395,27 @@ span.material-symbols-rounded {
 .typing-controls span:hover {
   background: var(--icon-hover-bg);
 }
+
+
+/*typing effect*/
+#typewriter {
+        color: #75a99c;
+        font-weight: bold;
+      }
+
+      #cursor {
+        color: #75a99c;
+        animation: blink 1s linear infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 100%;
+        }
+        50% {
+          opacity: 0%;
+        }
+      }
 
 /* For screens with a width less than or equal to 600px (small screens) */
 @media screen and (max-width: 600px) {

@@ -59,36 +59,32 @@
   z-index: 1000; /* Ensure it appears on top of other content */
 }
 
-button[type=button] {
-  margin-top: 10px;
-  appearance: none;
-  border: .2em solid #75a99c;
-  background: transparent;
-  padding: .85em 1.5em;
-  color: #E91E63;
-  border-radius: 2em;
-  transition: 1s;
-  width: 40%;
-  color: #FFFFFF;
-  cursor: pointer;
-}
-button[type="button"]:hover {
-  background-color: #FFFFFF;
-  color: #E91E63;
-}
+.input-container {
+  display: flex;
+  align-items: center; }
 
-
-input{
+.w3-input {
+  flex: 1; /* Take up remaining space in the container */
   background: transparent;
   appearance: none;
   border: none;
   outline: none;
   border-bottom: .2em solid #75a99c;
-  background: rgba(#E91E63, .2);
   border-radius: .2em .2em 0 0;
-  padding: 20px;
+  padding: 10px;
   color: #FFFFFF;
-  font-size: 12px;
+}
+.sendbutton {
+  margin-top: 10px;
+  appearance: none;
+  border: .2em solid #75a99c;
+  background: transparent;
+  padding: .85em 1.5em;
+  border-radius: 2em;
+  transition: 1s;
+  color: #FFFFFF;
+  cursor: pointer;
+  color: #75a99c;
 }
 
 /* Track (the area where the scrollbar is located) */

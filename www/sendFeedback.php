@@ -13,10 +13,10 @@ if ($conn->connect_error) {
 }
 
 // Get user input from the POST request
-$userFeedback = $conn->real_escape_string($_POST['feedback']);
+$userFeedback = $conn->real_escape_string($_POST['userFeedback']);
 
 // Insert feedback into the database
-$sql = "INSERT INTO feedbase (feedback_level) VALUES ('$userFeedback')";
+$sql = "INSERT INTO feedbase (feedback) VALUES ('$userFeedback')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Feedback submitted successfully!";

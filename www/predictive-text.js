@@ -10,22 +10,20 @@ fetch('www/getPredictiveText.php')
     })
     .catch(error => console.error('Error fetching predictive text options:', error));
 
-
 const input = document.getElementById("chat-input");
 const suggestion = document.getElementById("suggestion");
 
 // Event listener for input changes
 input.addEventListener("input", () => {
     clearSuggestion();
-    const inputWords = input.value.split(" ");
-    const lastWord = inputWords[inputWords.length - 1];
-    const regex = new RegExp("^" + lastWord, "i");
+    const currentInput = input.value.trim(); // Trim leading and trailing spaces
+    const regex = new RegExp("^" + currentInput, "i");
 
     const matchingSuggestions = predictiveTextOptions.filter(option =>
         regex.test(option.toLowerCase())
     );
 
-    if (matchingSuggestions.length > 0 && lastWord !== "") {
+    if (matchingSuggestions.length > 0 && currentInput) {
         matchingSuggestions.forEach(suggest => {
             const suggestionItem = document.createElement("div");
             suggestionItem.textContent = suggest;
@@ -39,6 +37,7 @@ input.addEventListener("input", () => {
     }
 });
 
+
 // Event listener for Enter key press
 input.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && suggestion.childElementCount > 0) {
@@ -49,14 +48,17 @@ input.addEventListener("keydown", (e) => {
 });
 
 const applySuggestion = (selectedSuggestion) => {
-    const currentInput = input.value;
-    const updatedInput = currentInput.replace(/\S+$/, "");
-    input.value = updatedInput + selectedSuggestion;
+    input.value = selectedSuggestion;
+    clearSuggestion();
 };
+
+
 
 const clearSuggestion = () => {
     suggestion.innerHTML = "";
 };
+
+
 
 
 

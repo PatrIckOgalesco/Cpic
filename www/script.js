@@ -16,8 +16,8 @@ const sanitizeTextForSpeech = (text) => {
 
 const loadDataFromLocalstorage = () => {
   const defaultText = `<div class="default-text"><br><br>
-    <h2 style="font-size: 1.7rem;text-align: left;">Hello there, welcome!</h2>
-    <p>Hello there, welcome! Your Personal CPIC Chatbot Campus Navigator!</p>
+    <h2 style="font-size: 1.2rem;text-align: left;">Hello there, welcome!</h2>
+    <p>Your Personal CPIC <span id="typewriter"></span><span id="cursor">|</span></p>
     <img src="www/images/b-bot.png" alt="user-img" style="width: auto; height: 60%;">
     <h2> SmartNavigator </h2>
     <p style = "font-size:10px;">"A chatbot designed to revolutionize the way students and faculty at Christian Polytechnic Institute of Catanduanes Inc."</p>

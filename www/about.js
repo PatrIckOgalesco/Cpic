@@ -33,6 +33,7 @@ const aboutButton = document.getElementById("about-button");
 const aboutUsButton = document.getElementById("aboutUs-button");
 const contactButton = document.getElementById("contact-button");
 const feedbackButton = document.getElementById("feedback-button");
+const speechButton = document.getElementById("speech-button");
 
 aboutButton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -114,9 +115,22 @@ feedbackButton.addEventListener("click", function (event) {
     <h3>Feedback</h3>
     <img src="www/images/Explainer.gif" alt="Snippet"><br>
     <p>"We value your feedback and would love to hear your thoughts. Your feedback helps us improve and provide you with a better experience."</p>
-    <input id="userInput" class="w3-input" type="text">
-    <button id="sendButton" class="button" type="button">Send</button><br>
+    <div class="input-container">
+    <input id="userInput" class="w3-input" type="text" placeholder="Type something...">
+    <span id="sendbutton" type="button" class="material-symbols-rounded">send</span>
+    </div>
     <span id="close" class="material-symbols-rounded">close</span>
   `;
   showNotification(feedbackHTML);
+});
+
+speechButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  const speechHTML = `
+    <h3>Speech Rate</h3><br>
+     <p>Note: 1.0 - Noraml | 2.0 - Max</p><br>
+    <input type="range" id="size-slider" min="1" max="5" value="2" class="speechrate">
+    <span id="close" class="material-symbols-rounded">close</span>
+  `;
+  showNotification(speechHTML);
 });
