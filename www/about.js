@@ -56,38 +56,38 @@ aboutUsButton.addEventListener("click", function (event) {
     <h3>About Us</h3>
     <img src="www/images/VR.gif" alt="Snippet"><br>
     <p>
-        We are a group of dedicated 4th-year Bachelor of Computer Science (BCSC) students from Christian Polytechnic Institute of Catanduanes Inc. (CPIC). Our journey led us to the creation of SmartNavigator, a cutting-edge AI chatbot. Our thesis project is designed to revolutionize the way students and faculty at CPIC access and interact with campus-related information. SmartNavigator is powered by state-of-the-art natural language processing and voice interaction capabilities, allowing it to deliver precise and swift responses to user queries. We are excited to bring innovation to our school community and make information access more convenient for everyone.
+        We are a group of dedicated 4th-year Bachelor of Computer Science (BCSC) students from Christian Polytechnic Institute of Catanduanes Inc. (CPIC). Our journey led us to the creation of SmartNavigator, a cutting-edge chatbot. Our thesis project is designed to revolutionize the way students and faculty at CPIC access and interact with campus-related information. SmartNavigator is powered by state-of-the-art natural language processing and voice interaction capabilities, allowing it to deliver precise and swift responses to user queries. We are excited to bring innovation to our school community and make information access more convenient for everyone.
     </p><br>
     <h3>Meet Our Team</h3><br>
     <ul style= "text-align: left; font-size: 12px;">
         <li>
             <strong>Name:</strong> Jon Ken Ambrosio<br>
             <strong>Age:</strong> 22<br>
-            <strong>Contact:</strong> john@example.com<br>
-            <strong>Role:</strong> Project Manager, System Developer, Database Manager
+            <strong>Contact:</strong> jon@example.com<br>
+            <strong>Role:</strong> Project Manager | System Developer | Database Manager
         </li><br>
         <li>
             <strong>Name:</strong> John Patrick Ogalesco<br>
             <strong>Age:</strong> 23<br>
-            <strong>Contact:</strong> jane@example.com<br>
-            <strong>Role:</strong> UI/UX Designer
+            <strong>Contact:</strong> jpatrickogalesco@gmail.com<br>
+            <strong>Role:</strong> UI Designer | Programming
         </li><br>
         <li>
             <strong>Name:</strong> Jolina Idanan<br>
             <strong>Age:</strong> 24<br>
-            <strong>Contact:</strong> robert@example.com<br>
+            <strong>Contact:</strong> jolina@example.com<br>
             <strong>Role:</strong> System Analyst
         </li><br>
         <li>
             <strong>Name:</strong> Nelmar Obre<br>
             <strong>Age:</strong> 23<br>
-            <strong>Contact:</strong> sarah@example.com<br>
+            <strong>Contact:</strong> nelmar@example.com<br>
             <strong>Role:</strong> Team Leader
         </li><br>
         <li>
             <strong>Name:</strong> Jayson Tangher<br>
             <strong>Age:</strong> 25<br>
-            <strong>Contact:</strong> michael@example.com<br>
+            <strong>Contact:</strong> jayson@example.com<br>
             <strong>Role:</strong> System Analyst
         </li>
     </ul>
@@ -114,9 +114,9 @@ feedbackButton.addEventListener("click", function (event) {
   const feedbackHTML = `
     <h3>Feedback</h3>
     <img src="www/images/Explainer.gif" alt="Snippet"><br>
-    <p>"We value your feedback and would love to hear your thoughts. Your feedback helps us improve and provide you with a better experience."</p>
+    <p>"We value your feedback and would love to hear your thoughts. Your feedback helps us improve and provide you with a better experience."</p><br>
     <div class="input-container">
-    <input id="userInput" class="w3-input" type="text" placeholder="Type something...">
+    <input id="userInput" class="w3-input" type="text" placeholder="Enter your comment here...">
     <span id="sendbutton" type="button" class="material-symbols-rounded">send</span>
     </div>
     <span id="close" class="material-symbols-rounded">close</span>
@@ -127,9 +127,9 @@ feedbackButton.addEventListener("click", function (event) {
 speechButton.addEventListener("click", function (event) {
   event.preventDefault();
   const speechHTML = `
-    <h3>Speech Rate</h3><br>
-     <p>Note: 1.0 - Noraml | 2.0 - Max</p><br>
-    <input type="range" id="size-slider" min="1" max="5" value="2" class="speechrate">
+    <h3>Speech Rate</h3>
+    <p>Note: 1.0 - Normal | 2.0 - Max</p>
+    <input type="range" id="size-slider" min="1" max="5" value="1.1" class="speechrate">
     <span id="close" class="material-symbols-rounded">close</span>
   `;
   showNotification(speechHTML);

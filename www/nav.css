@@ -1,17 +1,9 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}*/
-
 :root {
   --body-color: #18191a;
   --sidebar-color: #242526;
   --primary-color: #222327;
   --text-color: #FFFFFF;
+  --grey: #F5F5F5;
 }
 
 .top-nav {
@@ -26,7 +18,7 @@
   z-index: 100;
   opacity: 95%;
 }
-#nav-btn {
+#nav-btn{
   background: none;
   border: none;
   color: #FFFFFF;
@@ -39,7 +31,6 @@
   color: #75a99c;
   cursor: pointer;
   font-size: 24px;
-  margin-left: 20px;
 }
 
 .menu-links {
@@ -94,7 +85,7 @@
   background: var(--sidebar-color);
   z-index: 99;
   transition: left 0.3s ease;
-  border-right: 1px solid var(--incoming-chat-border);
+  border-right: 1px solid #0F1923;
 }
 
 .sidebar.open {

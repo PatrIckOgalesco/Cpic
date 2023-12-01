@@ -34,6 +34,10 @@
 }
 .notification-popup h3 {
   text-align: left;
+  font-family: 'VALORANT', sans-serif;
+}
+.notification-popup h2 {
+  font-family: 'VALORANT', sans-serif;
 }
 
 .notification-popup img {
@@ -89,7 +93,7 @@
 
 /* Track (the area where the scrollbar is located) */
 ::-webkit-scrollbar {
-  width: 8px; /* You can adjust the width */
+  width: 2px; /* You can adjust the width */
 }
 
 /* Handle (the draggable part of the scrollbar) */

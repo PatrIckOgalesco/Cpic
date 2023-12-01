@@ -1,6 +1,5 @@
 # SmartNavigator
 # Chatbot
-# patrickogalesco.github.io
 CPIC chatbot using HTML, CSS, and JavaScript
 
 

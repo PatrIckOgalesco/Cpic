@@ -16,13 +16,21 @@ const sanitizeTextForSpeech = (text) => {
 
 const loadDataFromLocalstorage = () => {
   const defaultText = `<div class="default-text"><br><br>
-    <h2 style="font-size: 1.2rem;text-align: left;">Hello there, welcome!</h2>
-    <p>Your Personal CPIC <span id="typewriter"></span><span id="cursor">|</span></p>
-    <img src="www/images/b-bot.png" alt="user-img" style="width: auto; height: 60%;">
-    <h2> SmartNavigator </h2>
-    <p style = "font-size:10px;">"A chatbot designed to revolutionize the way students and faculty at Christian Polytechnic Institute of Catanduanes Inc."</p>
-    <p style="color: #75a99c; font-size: 12px;">Created by: 4th Yr-BSCS (Group 3)</p>
+      <h1>Hello there, welcome!</h1>
+      <p style="font-weight: bold;">Your Personal CPIC <span id="typewriter"></span><span id="cursor">|</span></p><br>
+      <img src="www/images/log.png" alt="jett" id="img1">
+      <img src="www/images/chatlogo.png" alt="jett" id="img2">
+
+
+      <div class="default-intro2" id="default-intro2">
+        <h2> SmartNavigator </h2>
+          <div class="default-sub" id="default-sub">
+          <p style = "font-size: 12px;">"A chatbot designed to revolutionize the way students and faculty at Christian Polytechnic Institute of Catanduanes Inc."</p>
+      </div>
+    </div>
   </div>`;
+
+  // <img src="www/images/chatlogo.png" alt="user-img" style="width: auto; height: 50%;">
 
   chatContainer.innerHTML = localStorage.getItem("all-chats") || defaultText;
   chatContainer.scrollTo(0, chatContainer.scrollHeight);
@@ -80,7 +88,7 @@ const handleOutgoingChat = () => {
 
   switch (question) {
     case "where is cpic":
-      answer = `<p>Christian Polytechnic Institute of Catanduanes (CPIC) is located in Sta. Elena, Virac, Catanduanes.</p>
+      answer = `<p>Christian Polytechnic Institute of Catanduanes (CPIC) is located in Santa Elena, Virac, Catanduanes.</p>
               <p>Here's a map for your reference:</p>
               <iframe width="100%" height="300" style="border:0;"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d825.6277244016944!2d124.23732506459146!3d13.585938586788869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a016d415315ef9%3A0x70e8088067123e64!2sCPIC%20College!5e1!3m2!1sen!2sph!4v1699417169526!5m2!1sen!2sph"
