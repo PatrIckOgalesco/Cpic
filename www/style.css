@@ -170,7 +170,6 @@ body {
 }
 #default-intro2 {
    position: fixed;
-    bottom: 20%;
 }
 #img1 {
     position: fixed;
@@ -453,6 +452,10 @@ span.material-symbols-rounded {
 
 /* For screens with a width less than or equal to 600px (small screens) */
 @media screen and (max-width: 600px) {
+  #default-intro2 {
+   position: fixed;
+   margin-top: 250px;
+}
   #default-sub{
     padding-right: 2opx;
   }
@@ -507,6 +510,11 @@ span.material-symbols-rounded {
 
 /* For screens with a width between 600px and 1200px (medium screens) */
 @media screen and (min-width: 601px) and (max-width: 1200px) {
+  #default-intro2 {
+   position: fixed;
+/*   padding-top: 250px;*/
+   bottom: 20%;
+  }
   .default-text h1 {
     font-size: 2.8rem;
   }
@@ -554,6 +562,11 @@ span.material-symbols-rounded {
 
 /* For screens with a width greater than 1200px (large screens) */
 @media screen and (min-width: 1201px) {
+  #default-intro2 {
+   position: fixed;
+/*   padding-top: 250px;*/
+   bottom: 20%;
+}
   #img1 {
     height: 70%;
 }
@@ -570,10 +583,6 @@ span.material-symbols-rounded {
 
   .chat-container .chat {
     padding: 30px 10px;
-  }
-
-  .chat .chat-details .image-container {
-    margin-left: 10px;
   }
 
   .chat-container .chat p {
