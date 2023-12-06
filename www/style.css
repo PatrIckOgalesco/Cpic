@@ -2,12 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/valorant');
+@font-face {
+  font-family: 'Horizon';
+  src: url('path/to/OriginTech.ttf') format('truetype');
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 /*  font-family: 'Poppins', sans-serif;*/
   font-family: 'Fira Code', monospace;
+/*  font-family: 'Horizon', monospace;*/
 
 }
 
@@ -32,6 +37,7 @@ default {
   --incoming-chat-border: #444654;*/
 }
 .light-mode {
+/*  --text-color: #F1F1F1;*/
   --text-color: #2C2D31;
   --icon-color: #a9a9bc;
   --icon-hover-bg: #5b5e71;
@@ -146,9 +152,12 @@ body {
 .default-text h1 {
   font-size: 3.3rem;
   font-family: 'VALORANT', sans-serif;
+   
 }
 .default-text h2 {
-  font-family: 'Poppins', sans-serif;
+/*  font-family: 'Horizon', monospace;*/
+  font-family: 'VALORANT', sans-serif;
+/*  font-family: 'Poppins', sans-serif;*/
   font-weight: bold;
 }
 
@@ -159,7 +168,7 @@ body {
 
 .default-text p {
   margin-top: 9px;
-  font-size: .822rem;
+  font-size: .790rem;
 }
 
 .default-intro{
@@ -169,26 +178,32 @@ body {
   align-items: center;
 }
 #default-intro2 {
-   position: fixed;
+/*   position: fixed;*/
 }
 #img1 {
     position: fixed;
     right: 0;
+/*    z-index: 1;*/
     z-index: -1;
     width: auto;
     height: 50%;
     opacity: 90%;
 }
+
 #img2 {
     position: fixed;
     left: 0;
-    z-index: -1;
+    z-index: 0;
     width: auto;
     height: 100%;
     opacity: 6%;
     top: 0;
 }
 
+#smart {
+    position: relative; /* or absolute, depending on your layout */
+    z-index: 0; /* Set a lower z-index for the text */
+}
 .chat-container .chat {
   padding: 25px 10px;
   display: flex;
@@ -449,22 +464,32 @@ span.material-symbols-rounded {
           opacity: 0%;
         }
       }
-
 /* For screens with a width less than or equal to 600px (small screens) */
 @media screen and (max-width: 600px) {
   #default-intro2 {
    position: fixed;
-   margin-top: 250px;
+   bottom: 25%;
 }
   #default-sub{
-    padding-right: 2opx;
+    padding-right: 20px;
+    overflow-x: auto;
+  }
+  #sub{
+   font-size: 8px;
   }
   .default-text h1 {
     font-size: 1.9rem;
   }
 
-  :where(.default-text p, textarea, .chat p) {
+  :where(textarea, .chat p) {
     font-size: 12px;
+  }
+
+  /*:where(.default-text p, textarea, .chat p) {
+    font-size: 12px;
+  }*/
+  .default-text p{
+    font-size: 1rem;
   }
 
   .chat-container .chat {
@@ -518,11 +543,15 @@ span.material-symbols-rounded {
   .default-text h1 {
     font-size: 2.8rem;
   }
-
   :where(.default-text p, textarea, .chat p) {
     font-size: 14px;
   }
-
+  #smart{
+   font-size: 4rem;
+  }
+  .default-text p{
+    font-size: 1.2rem;
+  }
   .chat-container .chat {
     padding: 25px 10px;
   }
@@ -564,8 +593,7 @@ span.material-symbols-rounded {
 @media screen and (min-width: 1201px) {
   #default-intro2 {
    position: fixed;
-/*   padding-top: 250px;*/
-   bottom: 20%;
+   bottom: 22%;
 }
   #img1 {
     height: 70%;
@@ -573,12 +601,19 @@ span.material-symbols-rounded {
   #theme-btn{
     margin-right: 30px;
   }
+  #smart{
+   font-size: 80px;
+  }
   .default-text h1 {
     font-size: 3.3rem;
   }
 
-  :where(.default-text p, textarea, .chat p) {
+  :where(.default-text, textarea, .chat p) {
     font-size: 16px;
+  }
+
+  .default-text p{
+    font-size: 18px;
   }
 
   .chat-container .chat {

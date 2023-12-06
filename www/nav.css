@@ -38,7 +38,7 @@
   padding: 10px;
   font-size: 14px;
   position: absolute;
-  bottom: 0; /* Push the menu links to the bottom */
+  bottom: 0;
 }
 
 .menu-links li {

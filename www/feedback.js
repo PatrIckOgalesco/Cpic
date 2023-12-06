@@ -1,35 +1,32 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const feedbackDisplay = document.getElementById("feedbackDisplay");
+$(document).ready(function() {
+            function clearTextarea() {
+                $('#userInput').val('');
+            }
 
-    document.getElementById("sendbutton").addEventListener("click", function () {
-        // Get user input
-        const userFeedback = document.getElementById("userInput").value;
+            function showNotification(message) {
+                alert(message);
+            }
 
-        // Check if the input is not empty
-        if (userFeedback.trim() !== "") {
-            // Send the input to the server (PHP file)
-            fetch('www/sendFeedback.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: 'userFeedback=' + encodeURIComponent(userFeedback),
-            })
-                .then(response => response.text())
-                .then(data => {
-                    // Display feedback response (optional)
-                    feedbackDisplay.textContent = data;
+            $('#feedbackForm').submit(function(event) {
+                event.preventDefault(); // Prevent the default form submission
 
-                    // Close the notification after successfully submitting feedback
-                    closeNotification();
+                var feedbackText = $('#userInput').val().trim();
 
-                    // Clear the input field after sending feedback
-                    document.getElementById("userInput").value = "";
-                })
-                .catch(error => console.error('Error sending feedback:', error));
-        } else {
-            // Display a message if the input is empty (optional)
-            feedbackDisplay.textContent = "Please enter feedback before sending.";
-        }
-    });
-});
+                if (feedbackText !== '') {
+                    $.ajax({
+                        type: 'POST',
+                        url: './www/process_feedback.php',
+                        data: { userInput: feedbackText }, // Send only non-empty feedback
+                        success: function(response) {
+                            showNotification('Feedback Submitted Successfully😊😉');
+                            clearTextarea();
+                        },
+                        error: function(error) {
+                            alert('Error submitting feedback: ' + error.responseText);
+                        }
+                    });
+                } else {
+                    alert('Please Enter Your Feedback Before submitting🤔.');
+                }
+            });
+        });

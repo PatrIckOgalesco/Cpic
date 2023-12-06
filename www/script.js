@@ -16,16 +16,17 @@ const sanitizeTextForSpeech = (text) => {
 
 const loadDataFromLocalstorage = () => {
   const defaultText = `<div class="default-text"><br><br>
-      <h1>Hello there, welcome!</h1>
-      <p style="font-weight: bold;">Your Personal CPIC <span id="typewriter"></span><span id="cursor">|</span></p><br>
+      <h1>Hello there, welcome!</h1><br>
+      <p style="font-weight: bold;">Your Personal CPIC</p>
+      <span id="typewriter"></span><span id="cursor">|</span><br>
       <img src="www/images/log.png" alt="jett" id="img1">
       <img src="www/images/chatlogo.png" alt="jett" id="img2">
 
 
       <div class="default-intro2" id="default-intro2">
-        <h2> SmartNavigator </h2>
+        <h2 id="smart"> SmartNavigator </h2>
           <div class="default-sub" id="default-sub">
-          <p style = "font-size: 12px;">"A chatbot designed to revolutionize the way students and faculty at Christian Polytechnic Institute of Catanduanes Inc."</p>
+          <p id="sub" style = "font-size: 12px;">"A chatbot designed to revolutionize the way students and faculty at Christian Polytechnic Institute of Catanduanes Inc."</p>
       </div>
     </div>
   </div>`;
@@ -73,7 +74,7 @@ const handleOutgoingChat = () => {
 
   const html = `<div class="chat-content">
     <div class="chat-details">
-      <img src="www/images/user7.jpg" alt="user-img">
+      <img src="www/images/user1.jpg" alt="user-img">
       <p>${userText}</p>
     </div>
   </div>`;
@@ -109,7 +110,7 @@ const handleOutgoingChat = () => {
           answer = databaseAnswer;
           const answerHtml = `<div class="chat-content">
             <div class="chat-details">
-              <img src="www/images/chatbot3.jpg" alt="chatbot-img">
+              <img src="www/images/chatbot.jpg" alt="chatbot-img">
               <p>${answer}</p>
             </div>
           </div>`;
@@ -130,7 +131,7 @@ const handleOutgoingChat = () => {
   // If the switch case handles the answer, display it in the chat
   const answerHtml = `<div class="chat-content">
     <div class="chat-details">
-      <img src="www/images/chatbot3.jpg" alt="chatbot-img">
+      <img src="www/images/chatbot.jpg" alt="chatbot-img">
       <div>${answer}</div>
     </div>
   </div>`;

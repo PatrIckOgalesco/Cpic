@@ -116,8 +116,10 @@ feedbackButton.addEventListener("click", function (event) {
     <img src="www/images/Explainer.gif" alt="Snippet"><br>
     <p>"We value your feedback and would love to hear your thoughts. Your feedback helps us improve and provide you with a better experience."</p><br>
     <div class="input-container">
-    <input id="userInput" class="w3-input" type="text" placeholder="Enter your comment here...">
-    <span id="sendbutton" type="button" class="material-symbols-rounded">send</span>
+    <form id="feedbackForm" action="">
+        <input name="userInput" id="userInput" class="w3-input" type="text" placeholder="Enter your comment here...">
+        <button id="sendbutton" type="submit" class="material-symbols-rounded" style="cursor: pointer;">send</button>
+    </form>
     </div>
     <span id="close" class="material-symbols-rounded">close</span>
   `;
