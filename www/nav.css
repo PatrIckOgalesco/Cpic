@@ -45,18 +45,49 @@
   margin-top: 20px;
 }
 
+
+/* Common styling for nav-links */
 .menu-links .nav-link a {
-  display: block;
-  text-decoration: none;
-  color: var(--text-color);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    margin-bottom: 10px;
 }
+
+/* Specific styling for each button */
+.menu-links #about-button i,
+.menu-links #contact-button i,
+.menu-links #feedback-button i,
+.menu-links #admin-button i,
+.menu-links #aboutUs-button i {
+    margin-right: 25px;
+}
+
+
+
+.menu-links #admin-button i {
+    color: #75a99c;
+}
+
 
 .sidebar.open .menu-links .nav-link a {
   color: #FFFFFF !important;
   text-decoration: none !important;
 }
+#icon{
+  font-size: 12px;
+}
 
+/* Hover effect */
+.menu-links .nav-link a:hover i {
+    color: #75a99c;
+}
 
+/* Click effect */
+.menu-links .nav-link a:active i {
+    color: #75a99c;
+}
 
 
 
