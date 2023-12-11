@@ -42,3 +42,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Event listener for window resize
   window.addEventListener("resize", handleWindowResize);
 });
+
+
+const navBtn = document.getElementById('nav-btn');
+
+navBtn.addEventListener('click', function () {
+  // Toggle between classes
+  if (navBtn.classList.contains('bx-menu')) {
+    navBtn.classList.remove('bx-menu');
+    navBtn.classList.add('bx-menu-alt-left');
+  } else {
+    navBtn.classList.remove('bx-menu-alt-left');
+    navBtn.classList.add('bx-menu');
+  }
+});

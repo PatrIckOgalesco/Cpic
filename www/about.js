@@ -33,12 +33,11 @@ const aboutButton = document.getElementById("about-button");
 const aboutUsButton = document.getElementById("aboutUs-button");
 const contactButton = document.getElementById("contact-button");
 const feedbackButton = document.getElementById("feedback-button");
-const speechButton = document.getElementById("speech-button");
 
 aboutButton.addEventListener("click", function (event) {
   event.preventDefault();
   const aboutHTML = `
-    <h3>About</h3>
+    <h3>About</h3><br>
     <img src="www/images/Digital.gif" alt="Snippet"><br>
     <p>SmartNavigator is a cutting-edge chatbot designed to revolutionize the way students and faculty at Christian Polytechnic Institute of Catanduanes Inc. (CPIC) access and interact with campus-related information. It is powered by state-of-the-art natural language processing and voice interaction capabilities, enabling it to provide precise and swift responses to user queries.</p><br><br>
     <h2>Purpose of the System</h2><br>
@@ -53,7 +52,7 @@ aboutButton.addEventListener("click", function (event) {
 aboutUsButton.addEventListener("click", function (event) {
   event.preventDefault();
   const aboutUsHTML = `
-    <h3>About Us</h3>
+    <h3>About Us</h3><br>
     <img src="www/images/VR.gif" alt="Snippet"><br>
     <p>
         We are a group of dedicated 4th-year Bachelor of Computer Science (BCSC) students from Christian Polytechnic Institute of Catanduanes Inc. (CPIC). Our journey led us to the creation of SmartNavigator, a cutting-edge chatbot. Our thesis project is designed to revolutionize the way students and faculty at CPIC access and interact with campus-related information. SmartNavigator is powered by state-of-the-art natural language processing and voice interaction capabilities, allowing it to deliver precise and swift responses to user queries. We are excited to bring innovation to our school community and make information access more convenient for everyone.
@@ -99,7 +98,7 @@ aboutUsButton.addEventListener("click", function (event) {
 contactButton.addEventListener("click", function (event) {
   event.preventDefault();
   const contactHTML = `
-    <h3>Contact</h3>
+    <h3>Contact</h3><br>
     <img src="www/images/Media.gif" alt="Snippet"><br>
     <p style="font-size: 13px">Address: Francia, Virac</p><br>
     <p style="font-size: 13px">Phone: +0098 9893 5647</p><br>
@@ -112,7 +111,7 @@ contactButton.addEventListener("click", function (event) {
 feedbackButton.addEventListener("click", function (event) {
   event.preventDefault();
   const feedbackHTML = `
-    <h3>Feedback</h3>
+    <h3>Feedback</h3><br>
     <img src="www/images/Explainer.gif" alt="Snippet"><br>
     <p>"We value your feedback and would love to hear your thoughts. Your feedback helps us improve and provide you with a better experience."</p><br>
     <div class="input-container">
@@ -124,15 +123,4 @@ feedbackButton.addEventListener("click", function (event) {
     <span id="close" class="material-symbols-rounded">close</span>
   `;
   showNotification(feedbackHTML);
-});
-
-speechButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  const speechHTML = `
-    <h3>Speech Rate</h3>
-    <p>Note: 1.0 - Normal | 2.0 - Max</p>
-    <input type="range" id="size-slider" min="1" max="5" value="1.1" class="speechrate">
-    <span id="close" class="material-symbols-rounded">close</span>
-  `;
-  showNotification(speechHTML);
 });

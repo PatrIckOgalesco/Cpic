@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/horizon">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
   <link href="https://fonts.cdnfonts.com/css/valorant" rel="stylesheet"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -30,12 +32,25 @@
 
   <nav class="top-nav">
   <div class="nav-container">
-    <button id="nav-btn" class="material-symbols-rounded">menu</button>
-    <span class="nav-label"> <img src="www/images/logo.png" alt="logo-img" class="logo-img" style="width: 25px; height: 25px; border-radius: 50px;"> SmartNavigator <span class="version"> version 3.5.3</span></span>
+    <i id="nav-btn" class='bx bx-menu'></i>
+
+
+    <span class="nav-label"> <img src="www/images/logo.png" alt="logo-img" class="logo-img" style="width: 25px; height: 25px; border-radius: 50px;"> SmartNavigator <span class="version"> version 2.4.1</span></span>
+
   </div>
   <nav>
-    <button id="theme-btn" class="material-symbols-rounded">light_mode</button>
-  </nav>
+    <button id="theme-btn"><i class='bx bxs-sun'></i> <span id="theme-text">Mode</span></button>
+    <div id="theme-dropdown" class="theme-dropdown">
+        <ul>
+            <li onclick="changeTheme('default')">Default</li>
+            <li onclick="changeTheme('light-mode')">Light GIF Mode </li>
+            <li onclick="changeTheme('light')">Light Mode</li>
+            <li onclick="changeTheme('dark-mode')">Dark Matrix Mode</li>
+            <li onclick="changeTheme('blue-mode')">Blue Mode</li>
+            <li onclick="changeTheme('green-mode')">Green Mode</li>
+        </ul>
+    </div>
+</nav>
 </nav>
 
 
@@ -46,22 +61,22 @@
         <ul class="menu-links">
           <li class="nav-link">
             <a href="#" id="about-button">
-               <i class="fas fa-info-circle" id="icon"></i> About
+               <i class="bx bx-info-circle" id="icon"></i> About
             </a>
           </li>
           <li class="nav-link">
             <a href="#" id="aboutUs-button">
-              <i class="far fa-address-card" id="icon"></i> About Us
+              <i class="bx bx-code-alt" id="icon"></i> About Us
             </a>
           </li>
           <li class="nav-link">
             <a href="#" id="contact-button">
-              <i class="fas fa-envelope" id="icon"></i> Contact
+              <i class="bx bx-envelope" id="icon"></i> Contact
             </a>
           </li>
           <li class="nav-link">
             <a href="#" id="feedback-button">
-              <i class="far fa-comment" id="icon"></i> Feedback 
+              <i class="bx bx-conversation" id="icon"></i> Feedback 
             </a>
           </li>
           <li class="nav-link">
@@ -70,7 +85,7 @@
             </a>
           </li>
           <br><br>
-          <p style="color: #75a99c; font-size: 9px;">Note: This system is made for Web System and Thesis writting only!!</p>
+         <p style="color: #75a99c; font-size: 9px;">Note: This system is made for Web System and Thesis writting only!!</p>
         </ul>
       </div>
     </div>
@@ -80,25 +95,32 @@
   <div class="container">
   <div class="chat-container"></div>
   <div class="typing-container">
-
     <div class="suggestion-container">
       <span id="suggestion"></span>
     </div>
     <div class="typing-textarea">
       <textarea id="chat-input" spellcheck="false" placeholder="Enter a prompt here" required></textarea>
-      <span id="send-btn" class="material-symbols-rounded">send</span>
+      <span id="send-btn" class='bx bx-send'></span>
     </div>
     <div class="typing-controls">
-      <span id="delete-btn" class="material-symbols-rounded">delete</span>
+      <span id="delete-btn" class='bx bx-trash'></span>
     </div>
   </div>
 
   <div class="disclaimer" style="color: #FFFFFF;">
      <span> Free Research Preview</span>. SmartNavigator may display inaccurate or out-to-date information, so double-check its responses.
-    <!-- <span> Free Research Preview</span>. SmartNavigator may display inaccurate or out-to-date information, including about people, so double-check its responses. -->
   </div>
   
 </div>
 </div>
 </body>
 </html>
+
+
+
+
+
+<!-- <i class='bx bx-menu'></i>
+<i class='bx bx-menu-alt-left' ></i>
+<i class='bx bxs-send' ></i>
+<i class='bx bxs-trash' ></i> -->

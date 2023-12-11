@@ -24,19 +24,49 @@
   color: #FFFFFF;
   cursor: pointer;
   font-size: 24px;
+  transition: all 0.3s ease;
+}
+#nav-btn{
+  transition: all 0.9s ease;
 }
 #theme-btn {
   background: none;
   border: none;
   color: #75a99c;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 23px;
 }
+.theme-dropdown {
+    position: fixed;
+    top: 48px;
+    right: 0;
+    display: none;
+    background-color: var(--sidebar-color); 
+    color: #FFFFFF;
+    font-size: 11px;
+    padding: 8px;
+    z-index: 1;
+}
+
+.theme-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.theme-dropdown li {
+    cursor: pointer;
+    padding: 8px;
+}
+.theme-dropdown li:hover {
+    color: #75a99c;
+}
+
 
 .menu-links {
   list-style: none;
   padding: 10px;
-  font-size: 14px;
+  font-size: 12px;
   position: absolute;
   bottom: 0;
 }
@@ -61,7 +91,8 @@
 .menu-links #feedback-button i,
 .menu-links #admin-button i,
 .menu-links #aboutUs-button i {
-    margin-right: 25px;
+    margin-right: 25px !important;
+    color: #FFFFFF;
 }
 
 
@@ -76,7 +107,8 @@
   text-decoration: none !important;
 }
 #icon{
-  font-size: 12px;
+  font-size: 11px;
+  color: #FFFFFF;
 }
 
 /* Hover effect */
@@ -108,7 +140,7 @@
 
 .sidebar {
   position: fixed;
-  top: 49px;
+  top: 48px;
   left: -230px; /* Initially hide the sidebar off the screen */
   width: 230px;
   height: calc(100% - 49px);

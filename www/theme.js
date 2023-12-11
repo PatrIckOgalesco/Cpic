@@ -1,6 +1,7 @@
 // theme.js
 const themeButton = document.querySelector("#theme-btn");
-const themes = ["default", "light-mode","light", "dark-mode", "blue-mode", "green-mode"];
+const themeText = document.querySelector("#theme-text");
+const themes = ["default", "light-mode", "light", "dark-mode", "blue-mode", "green-mode"];
 let currentThemeIndex = 0;
 
 // Function to set the theme based on the stored theme in localStorage or "default" if not set
@@ -15,7 +16,8 @@ function setThemeFromLocalStorage() {
 
   const currentTheme = themes[currentThemeIndex];
   document.body.classList.add(currentTheme);
-  themeButton.innerText = currentTheme === "light-mode" ? "dark_mode" : "light_mode";
+  themeButton.innerHTML = `<i class='bx ${currentTheme === 'light-mode' ? 'bxs-moon' : 'bxs-sun'}'></i>`;
+  themeText.innerText = currentTheme;
 
   // Check the current theme and create or remove the Matrix Rain effect accordingly
   toggleMatrixRain();
@@ -29,13 +31,17 @@ function setThemeFromLocalStorage() {
 }
 
 // Function to update the theme
-function updateTheme() {
-  currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-  const newTheme = themes[currentThemeIndex];
+function updateTheme(newTheme) {
+  currentThemeIndex = themes.indexOf(newTheme);
   document.body.classList.remove(...themes);
   document.body.classList.add(newTheme);
   localStorage.setItem("themeColor", newTheme);
-  themeButton.innerText = newTheme === "light-mode" ? "dark_mode" : "light_mode";
+
+  const themeIcon = document.querySelector("#theme-btn i");
+  themeIcon.className = ''; // Clear existing classes
+  themeIcon.classList.add('bx', newTheme === 'light-mode' ? 'bxs-moon' : 'bxs-sun'); // Adjust icons based on theme
+  
+  themeText.innerText = newTheme;
 
   // Check the current theme and create or remove the Matrix Rain effect accordingly
   toggleMatrixRain();
@@ -48,8 +54,19 @@ function updateTheme() {
   }
 }
 
-themeButton.addEventListener("click", () => {
-  updateTheme();
+themeButton.addEventListener("click", (event) => {
+  // Toggle dropdown visibility on theme button click
+  const dropdown = document.getElementById("theme-dropdown");
+  dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+
+  // Prevent the event from propagating to the document click listener
+  event.stopPropagation();
+});
+
+document.addEventListener("click", () => {
+  // Hide dropdown when clicking outside of it
+  const dropdown = document.getElementById("theme-dropdown");
+  dropdown.style.display = "none";
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -68,6 +85,12 @@ function toggleMatrixRain() {
   }
 }
 
+// Function to change the theme
+function changeTheme(newTheme) {
+  updateTheme(newTheme);
+  // Close the dropdown after selecting a theme
+  document.getElementById("theme-dropdown").style.display = "none";
+}
 
 // Matrix Rain
 let rainCanvas = null;
@@ -117,3 +140,9 @@ function createMatrixRain() {
   draw();
   setInterval(draw, 35);
 }
+
+
+
+
+
+
