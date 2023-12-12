@@ -9,10 +9,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #333;
+  background-color: #202529;
   color: #fff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   z-index: 9999;
   overflow: auto; /* Add scrolling for the entire popup */
@@ -43,7 +43,7 @@
 .notification-popup img {
   height: auto;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 0;
 }
 
 .notification-popup #close {
@@ -62,6 +62,7 @@
   align-items: center;
   z-index: 1000; /* Ensure it appears on top of other content */
 }
+
 .input-container {
   display: flex;
   align-items: center; 
@@ -77,7 +78,7 @@
   border-radius: .2em .2em 0 0;
   padding: 10px;
   color: #FFFFFF;
-  width: 450px;
+/*  width: 90%;*/
 }
 .sendbutton {
   margin-top: 10px;
@@ -140,7 +141,7 @@
 /* Add media query for mobile view */
 @media (max-width: 767px) {
   .notification-popup {
-    max-height: 90%; /* Adjust the maximum height for mobile view */
-    max-width: 94%;
+    max-height: 70%; /* Adjust the maximum height for mobile view */
+    max-width: 93%;
   }
 }

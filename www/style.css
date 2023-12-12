@@ -184,6 +184,7 @@ body {
     width: auto;
     height: 50%;
     opacity: 92%;
+    transition: opacity 0.5s ease;
 }
 
 /*#img2 {
@@ -197,8 +198,9 @@ body {
 }*/
 
 #smart {
-    position: relative; /* or absolute, depending on your layout */
-    z-index: 0; /* Set a lower z-index for the text */
+  object-fit: cover;
+  position: relative; 
+  z-index: 0;
 }
 .curveImg {
   position: fixed;
@@ -656,6 +658,11 @@ span.material-symbols-rounded {
   span.material-symbols-rounded {
     font-size: 1.5rem;
   }
+  .chat {
+    display: flex;
+    align-items: center;
+    padding: 25px 10px;
 }
+
 
 

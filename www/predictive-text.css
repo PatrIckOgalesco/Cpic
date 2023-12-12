@@ -1,11 +1,12 @@
 #suggestion {
-  background: rgba(255, 255, 255, 0.1); /* Light background color with lower opacity */
+  background: #353535; 
   text-align: center; /* Center-align the text */
   padding: 5px 10px; /* Adjust padding as needed */
   border-radius: 5px; /* Add rounded corners */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   width: fit-content; /* Set the width to fit the content */
-  color: var(--text-color); /* Use the same font color as the input prompts */
+  color: var(--text-color); 
+  opacity: 90%;
 }
 
 /* Position the suggestion above the textarea/prompts */

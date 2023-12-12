@@ -44,7 +44,7 @@ aboutButton.addEventListener("click", function (event) {
     <p>The SmartNavigator is a cutting-edge technological solution designed to serve a vital role in the educational landscape, with the primary purpose of enhancing the overall educational experience for students, parents, and educators within the CPIC school system.</p><br>
     <p>The first and foremost purpose of the SmartNavigator is to provide a responsive and efficient communication channel between stakeholders. It strives to bridge the communication gap by offering timely and accurate information, thus promoting transparency and engagement between students, parents, and educators. By facilitating this streamlined exchange of information, the chatbot ensures that parents remain well-informed about school activities, student progress, and other relevant updates.</p><br>
     <p>The SmartNavigator is introduced with a multifaceted purpose aimed at improving communication, providing academic support, reducing administrative tasks, and contributing to data-driven educational enhancements within the CPIC school system. Through this research, we aim to gain a comprehensive understanding of the manifold benefits and potential challenges associated with this innovative tool, shedding light on its role in revolutionizing education in the digital age.</p>
-    <span id="close" class="material-symbols-rounded">close</span>
+    <span id="close" class="material-symbols-rounded bx bx-x"></span>
   `;
   showNotification(aboutHTML);
 });
@@ -90,7 +90,7 @@ aboutUsButton.addEventListener("click", function (event) {
             <strong>Role:</strong> System Analyst
         </li>
     </ul>
-    <span id="close" class="material-symbols-rounded">close</span>
+    <span id="close" class="material-symbols-rounded bx bx-x"></span>
   `;
   showNotification(aboutUsHTML);
 });
@@ -103,7 +103,7 @@ contactButton.addEventListener("click", function (event) {
     <p style="font-size: 13px">Address: Francia, Virac</p><br>
     <p style="font-size: 13px">Phone: +0098 9893 5647</p><br>
     <p style="font-size: 13px">Email: cpic@gmail.com</p><br>
-    <span id="close" class="material-symbols-rounded">close</span>
+    <span id="close" class="material-symbols-rounded bx bx-x"></span>
   `;
   showNotification(contactHTML);
 });
@@ -114,13 +114,11 @@ feedbackButton.addEventListener("click", function (event) {
     <h3>Feedback</h3><br>
     <img src="www/images/Explainer.gif" alt="Snippet"><br>
     <p>"We value your feedback and would love to hear your thoughts. Your feedback helps us improve and provide you with a better experience."</p><br>
-    <div class="input-container">
-    <form id="feedbackForm" action="">
+    <div class="input-container" id="feedbackForm" action="">
         <input name="userInput" id="userInput" class="w3-input" type="text" placeholder="Enter your comment here...">
         <button id="sendbutton" type="submit" class="material-symbols-rounded" style="cursor: pointer;">send</button>
-    </form>
     </div>
-    <span id="close" class="material-symbols-rounded">close</span>
+    <span id="close" class="material-symbols-rounded bx bx-x"></span>
   `;
   showNotification(feedbackHTML);
 });

@@ -74,7 +74,7 @@ const handleOutgoingChat = () => {
   const html = `<div class="chat-content">
     <div class="chat-details">
       <img src="www/images/user1.jpg" alt="user-img">
-      <p>${userText}</p>
+      ${userText}
     </div>
   </div>`;
 
@@ -102,7 +102,7 @@ const handleOutgoingChat = () => {
           const answerHtml = `<div class="chat-content">
             <div class="chat-details">
               <img src="www/images/chatlogo.jpg" alt="chatbot-img">
-              <p>${answer}</p>
+              ${answer}
             </div>
           </div>`;
 
@@ -123,7 +123,7 @@ const handleOutgoingChat = () => {
   const answerHtml = `<div class="chat-content">
     <div class="chat-details">
       <img src="www/images/chatlogo.jpg" alt="chatbot-img">
-      <div>${answer}</div>
+      ${answer}
     </div>
   </div>`;
 
