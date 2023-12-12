@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
               </div>";
     }
 } else {
-    echo "I'm sorry, but I couldn't find an answer to your question. Please try again.";
+    echo "I apologize, but it seems I couldn't locate the information you're looking for. Feel free to ask another question or provide more details, and I'll do my best to assist you!";
 }
 
 $conn->close();

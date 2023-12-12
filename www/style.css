@@ -274,9 +274,7 @@ span.material-symbols-rounded {
 }
 .chat-details {
     display: flex;
-/*    display: grid;*/
-    grid-template-columns: auto 1fr;
-    column-gap: 1px; /* Adjust the gap as needed */
+    gap: 25px; 
     width: 100%;
 }
 
@@ -514,7 +512,7 @@ span.material-symbols-rounded {
     padding: 0 25px 0 25px;
 }
   .chat-details p {
-    margin-left: 25px !important;
+/*    margin-left: 25px !important;*/
 }
 
   .chat .chat-content:not(:has(.typing-animation), :has(.error)) span {

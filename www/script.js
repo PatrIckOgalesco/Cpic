@@ -1,4 +1,3 @@
-
 const chatInput = document.querySelector("#chat-input");
 const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
@@ -88,14 +87,6 @@ const handleOutgoingChat = () => {
   let answer = '';
 
   switch (question) {
-    case "where is cpic":
-      answer = `<p>Christian Polytechnic Institute of Catanduanes (CPIC) is located in Santa Elena, Virac, Catanduanes.</p>
-              <p>Here's a map for your reference:</p><br>
-              <iframe width="98%" height="300" style="border:0;"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d825.6277244016944!2d124.23732506459146!3d13.585938586788869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a016d415315ef9%3A0x70e8088067123e64!2sCPIC%20College!5e1!3m2!1sen!2sph!4v1699417169526!5m2!1sen!2sph"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
-      break;
-
     default:
       // Send the user input to the server (PHP) for database query
       fetch('www/api.php', {
@@ -110,7 +101,7 @@ const handleOutgoingChat = () => {
           answer = databaseAnswer;
           const answerHtml = `<div class="chat-content">
             <div class="chat-details">
-              <img src="www/images/chatbot.jpg" alt="chatbot-img">
+              <img src="www/images/chatlogo.jpg" alt="chatbot-img">
               <p>${answer}</p>
             </div>
           </div>`;
@@ -131,7 +122,7 @@ const handleOutgoingChat = () => {
   // If the switch case handles the answer, display it in the chat
   const answerHtml = `<div class="chat-content">
     <div class="chat-details">
-      <img src="www/images/chatbot.jpg" alt="chatbot-img">
+      <img src="www/images/chatlogo.jpg" alt="chatbot-img">
       <div>${answer}</div>
     </div>
   </div>`;
