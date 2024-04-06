@@ -149,6 +149,7 @@
   z-index: 99;
   transition: left 0.3s ease;
   border-right: 1px solid #0F1923;
+  opacity: 98%;
 }
 
 .sidebar.open {

@@ -1,0 +1,9 @@
+.add{
+    max-width: 100%;
+    height: 100px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 400px 400px;
+}

@@ -5,17 +5,18 @@
   text-align: center;
   position: fixed;
   width: 100%;
-  max-width: 50%; /* Adjust the maximum width for larger screens */
+  max-width: 50%; 
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #202529;
+  transform:translate(-50%,-50%);
+  background-color: #212227;
   color: #fff;
   padding: 20px;
   border-radius: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   z-index: 9999;
-  overflow: auto; /* Add scrolling for the entire popup */
+  overflow: auto; 
+  border: 1px solid #3c3c3c;
 }
 
 .notification-popup .text-container {
@@ -26,7 +27,7 @@
 }
 
 .notification-popup p {
-  margin: 0; /* Remove default margin for <p> elements */
+  margin: 0;
   font-family: 'Fira Code', monospace;
   font-weight: normal;
   font-size: 12px;
@@ -63,50 +64,21 @@
   z-index: 1000; /* Ensure it appears on top of other content */
 }
 
-.input-container {
-  display: flex;
-  align-items: center; 
-}
-
-.w3-input {
-  flex: 1; /* Take up remaining space in the container */
-  background: transparent;
-  appearance: none;
-  border: none;
-  outline: none;
-  border-bottom: .2em solid #75a99c;
-  border-radius: .2em .2em 0 0;
-  padding: 10px;
-  color: #FFFFFF;
-/*  width: 90%;*/
-}
-.sendbutton {
-  margin-top: 10px;
-  appearance: none;
-  border: .2em solid #75a99c;
-  background: transparent;
-  padding: .85em 1.5em;
-  border-radius: 2em;
-  transition: 1s;
-  color: #FFFFFF;
-  cursor: pointer;
-  color: #75a99c;
-}
 
 /* Track (the area where the scrollbar is located) */
 ::-webkit-scrollbar {
-  width: 2px !important; /* You can adjust the width */
+  width: 5px !important; /* You can adjust the width */
 }
 
 /* Handle (the draggable part of the scrollbar) */
 ::-webkit-scrollbar-thumb {
   background: #888; /* Color of the scrollbar handle */
-  border-radius: 6px; /* Rounded corners for the handle */
+  border-radius: 0; /* Rounded corners for the handle */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color of the scrollbar handle on hover */
+  background: #555; 
 }
 
 /* Track on hover (the area where the scrollbar is located on hover) */
@@ -130,18 +102,28 @@
   .notification-popup .text-container {
     max-height: none; /* Remove the max-height for the text container on larger screens */
   }
+  .notification-popup {
+    padding: 20px 50px;
+  }
   .notification-popup img {
-    max-height: 300px;
+    max-height: 250px;
   }.notification-popup{
-    max-width: 40%;
-    max-height: 80%;
+    max-width: 50%;
+    max-height: 60%;
   }
 }
 
-/* Add media query for mobile view */
-@media (max-width: 767px) {
+
+@media (min-width: 601px) and (max-width: 1024px) {
   .notification-popup {
-    max-height: 70%; /* Adjust the maximum height for mobile view */
+    max-height: 60%;
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .notification-popup {
+    max-height: 70%;
     max-width: 93%;
   }
 }
